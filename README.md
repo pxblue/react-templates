@@ -1,3 +1,5 @@
+[![Build](https://github.com/etn-ccis/blui-react-cli-templates/actions/workflows/blui-ci.yml/badge.svg?branch=master)](https://github.com/etn-ccis/blui-react-cli-templates/actions/workflows/blui-ci.yml)
+
 # React CLI Templates
 
 These are project templates that are used by Create React App when starting a new Brightlayer UI project. They are used behind the scenes by the Brightlayer UI CLI.
