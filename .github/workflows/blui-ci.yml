@@ -51,7 +51,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           registry-url: 'https://registry.npmjs.org'
       - run: yarn --immutable
-      - run: npm run publish:package -b ${{env.BRANCH}}
+      - run: npm run publish:package -- -b ${{env.BRANCH}}
         working-directory: blank-typescript
 
   publish_routing_template:
@@ -70,7 +70,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           registry-url: 'https://registry.npmjs.org'
       - run: yarn --immutable
-      - run: npm run publish:package -b ${{env.BRANCH}}
+      - run: npm run publish:package -- -b ${{env.BRANCH}}
         working-directory: routing-typescript
 
   publish_auth_template:
@@ -89,5 +89,5 @@ jobs:
           node-version: ${{ matrix.node-version }}
           registry-url: 'https://registry.npmjs.org'
       - run: yarn --immutable
-      - run: npm run publish:package -b ${{env.BRANCH}}
+      - run: npm run publish:package -- -b ${{env.BRANCH}}
         working-directory: authentication-typescript
