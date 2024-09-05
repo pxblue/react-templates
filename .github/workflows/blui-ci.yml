@@ -35,7 +35,7 @@ jobs:
             - run: yarn prettier:check
             # - run: yarn lint
 
-    publish_cli-templates:
+    publish_cli_templates:
         runs-on: ubuntu-latest
         if: ${{ github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev') }}
         needs: prettier_lint
