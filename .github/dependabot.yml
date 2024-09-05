@@ -10,18 +10,8 @@ updates:
       labels:
           - 'external-dependency'
 
-    # - package-ecosystem: 'npm'
-    #   directory: '/templates/authentication-typescript'
-    #   schedule:
-    #       interval: 'monthly'
-    #       day: 'monday'
-    #   open-pull-requests-limit: 1
-    #   target-branch: 'dev'
-    #   labels:
-    #       - 'external-dependency'
-
     - package-ecosystem: 'npm'
-      directory: '/templates/blank-typescript'
+      directory: '/authentication-typescript'
       schedule:
           interval: 'monthly'
           day: 'monday'
@@ -30,12 +20,22 @@ updates:
       labels:
           - 'external-dependency'
 
-    # - package-ecosystem: 'npm'
-    #   directory: '/templates/routing-typescript'
-    #   schedule:
-    #       interval: 'monthly'
-    #       day: 'monday'
-    #   open-pull-requests-limit: 1
-    #   target-branch: 'dev'
-    #   labels:
-    #       - 'external-dependency'
+    - package-ecosystem: 'npm'
+      directory: '/blank-typescript'
+      schedule:
+          interval: 'monthly'
+          day: 'monday'
+      open-pull-requests-limit: 1
+      target-branch: 'dev'
+      labels:
+          - 'external-dependency'
+
+    - package-ecosystem: 'npm'
+      directory: '/routing-typescript'
+      schedule:
+          interval: 'monthly'
+          day: 'monday'
+      open-pull-requests-limit: 1
+      target-branch: 'dev'
+      labels:
+          - 'external-dependency'

@@ -33,25 +33,70 @@ jobs:
                   cache: 'yarn'
             - run: yarn
             - run: yarn prettier:check
-            # - run: yarn lint
+            - run: yarn lint
 
-#     publish_cli-templates:
-#         runs-on: ubuntu-latest
-#         if: ${{ github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev') }}
-#         needs: prettier_lint
-#         strategy:
-#             matrix:
-#                 node-version: [20.x]
-#         env:
-#             NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-#             BRANCH: ${{ github.ref == 'refs/heads/master' && 'master' || 'dev' }}
-#         steps:
-#             - name: Checkout
-#               uses: actions/checkout@v2
-#             - uses: actions/setup-node@v3
-#               with:
-#                   node-version: ${{ matrix.node-version }}
-#                   registry-url: 'https://registry.npmjs.org'
-#             - run: yarn --immutable
-#             - run: npm run publish:package -- -b ${{env.BRANCH}}
-    
+    publish_blank_template:
+        runs-on: ubuntu-latest
+        if: ${{ github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev') }}
+        needs: prettier_lint
+        strategy:
+            matrix:
+                node-version: [20.x]
+        env:
+            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+            BRANCH: ${{ github.ref == 'refs/heads/master' && 'master' || 'dev' }}
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  registry-url: 'https://registry.npmjs.org'
+            - run: yarn --immutable
+              working-directory: blank-typescript
+            - run: npm run publish:package -- -b ${{env.BRANCH}}
+              working-directory: blank-typescript
+
+    publish_routing_template:
+        runs-on: ubuntu-latest
+        if: ${{ github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev') }}
+        needs: prettier_lint
+        strategy:
+            matrix:
+                node-version: [20.x]
+        env:
+            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+            BRANCH: ${{ github.ref == 'refs/heads/master' && 'master' || 'dev' }}
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  registry-url: 'https://registry.npmjs.org'
+            - run: yarn --immutable
+              working-directory: routing-typescript
+            - run: npm run publish:package -- -b ${{env.BRANCH}}
+              working-directory: routing-typescript
+
+    publish_auth_template:
+        runs-on: ubuntu-latest
+        if: ${{ github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev') }}
+        needs: prettier_lint
+        strategy:
+            matrix:
+                node-version: [20.x]
+        env:
+            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+            BRANCH: ${{ github.ref == 'refs/heads/master' && 'master' || 'dev' }}
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v2
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  registry-url: 'https://registry.npmjs.org'
+            - run: yarn --immutable
+              working-directory: authentication-typescript
+            - run: npm run publish:package -- -b ${{env.BRANCH}}
+              working-directory: authentication-typescript
