@@ -1,13 +1,25 @@
 {
-    "name": "brightlayer-ui-cli-templates-react",
-    "version": "0.0.0",
+    "name": "@brightlayer-ui/react-cli-templates",
+    "version": "1.0.0-alpha.0",
     "keywords": [
         "template",
         "brightlayer-ui",
         "brightlayer ui",
-        "cli"
+        "React",
+        "Vite",
+        "Typescript",
+        "Templates",
+        "React test library",
+        "Jest",
+        "Prettier",
+        "ESlint"
     ],
-    "description": "This repository holds the different react templates used by the Brightlayer UI CLI",
+    "description": "This repository holds the different react vite templates used by Brightlayer UI",
+    "main": "index.js",
+    "type": "module",
+    "bin": {
+        "create-blui-react-app": "./index.js"
+    },
     "repository": {
         "type": "git",
         "url": "https://github.com/etn-ccis/blui-react-cli-templates.git",
@@ -15,7 +27,7 @@
     },
     "license": "BSD-3-Clause",
     "engines": {
-        "node": ">=10"
+        "node": "^18.0.0 || >=20.0.0"
     },
     "scripts": {
         "generate:licenses": "npm-license-crawler -onlyDirectDependencies -json LICENSES.json",
@@ -23,7 +35,8 @@
         "lint:fix": "eslint '**/**.{tsx,ts}' --fix",
         "prettier": "prettier \"**/**.{ts,tsx,js,jsx,json,css,scss,html}\" --write",
         "prettier:check": "prettier \"**/**.{ts,tsx,js,jsx,json,css,scss,html}\"",
-        "precommit": "yarn prettier && yarn lint && yarn generate:licenses"
+        "precommit": "yarn prettier && yarn lint && yarn generate:licenses",
+        "publish:package": "set npm_config_yes=true && npx -p @brightlayer-ui/publish blui-publish"
     },
     "prettier": "@brightlayer-ui/prettier-config",
     "bugs": {
@@ -37,10 +50,10 @@
         "eslint": "^8.57.0",
         "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-react": "^7.35.0",
-        "npm-license-crawler": "^0.2.1",
         "prettier": "^3.2.5"
     },
     "dependencies": {
+        "inquirer": "^10.2.0",
         "typescript": "^5.5.3"
     }
 }

@@ -16,5 +16,6 @@
         "noEmit": true,
         "jsx": "react"
     },
-    "include": ["templates/blank-typescript", "templates/routing-typescript", "templates/authentication-typescript"]
+    "include": ["src"],
+    "references": [{ "path": "./tsconfig.node.json" }]
 }
