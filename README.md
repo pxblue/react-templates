@@ -2,7 +2,7 @@
 
 # React + TypeScript + Vite Templates
 
-These are project templates that are used by Create React App when starting a new Brightlayer UI project. They are used behind the scenes by the Brightlayer UI CLI.
+These are project templates that are used for starting a new Brightlayer UI project. The templates are configured with the basic Brightlayer UI libraries for themes and components and configures the application to use them.
 
 ## Available Templates
 
