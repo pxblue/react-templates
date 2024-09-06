@@ -4,7 +4,6 @@ import inquirer from 'inquirer';
 import * as fs from 'fs';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
-import createDirectoryContents from './createDirectoryContents.js';
 
 const CURR_DIR = process.cwd();
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -35,6 +34,7 @@ inquirer.prompt(QUESTIONS).then((answers) => {
     const templatePath = `${__dirname}/templates/${projectChoice}`;
 
     fs.mkdirSync(`${CURR_DIR}/${projectName}`);
-
-    createDirectoryContents(templatePath, projectName);
+    fs.cpSync(templatePath, projectName, { recursive: true });
+    fs.renameSync(`${projectName}/gitignore`, `${projectName}/.gitignore`);
+    fs.renameSync(`${projectName}/eslintrc.js`, `${projectName}/.eslintrc.js`);
 });
