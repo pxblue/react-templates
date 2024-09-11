@@ -34,7 +34,9 @@ jobs:
             - run: yarn
               working-directory: templates/blank-typescript
             - run: yarn prettier:check
+              working-directory: templates/blank-typescript
             - run: yarn lint
+              working-directory: templates/blank-typescript
 
     publish_cli_templates:
         runs-on: ubuntu-latest
