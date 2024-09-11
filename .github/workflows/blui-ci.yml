@@ -32,8 +32,9 @@ jobs:
                   node-version: ${{ matrix.node-version }}
                   cache: 'yarn'
             - run: yarn
+              working-directory: templates/blank-typescript
             - run: yarn prettier:check
-            # - run: yarn lint
+            - run: yarn lint
 
     publish_cli_templates:
         runs-on: ubuntu-latest
