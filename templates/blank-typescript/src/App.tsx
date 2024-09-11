@@ -99,7 +99,10 @@ export const App = (): JSX.Element => {
                                     </Button>
                                 </Grid>
                                 <Grid item xs={12} sm={6}>
-                                    <Button target={'_blank'} href={'https://github.com/etn-ccis?q=blui&type=all&language=&sort='}>
+                                    <Button
+                                        target={'_blank'}
+                                        href={'https://github.com/etn-ccis?q=blui&type=all&language=&sort='}
+                                    >
                                         Visit Us on GitHub
                                     </Button>
                                 </Grid>
