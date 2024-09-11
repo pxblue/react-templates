@@ -16,7 +16,7 @@ permissions:
     contents: read
 
 jobs:
-    prettier_lint:
+    prettier_lint_blank:
         runs-on: ubuntu-latest
 
         strategy:
@@ -39,10 +39,33 @@ jobs:
             - run: yarn lint
               working-directory: templates/blank-typescript
 
+    prettier_lint_routing:
+        runs-on: ubuntu-latest
+        
+        strategy:
+            matrix:
+                node-version: [20.x]
+        
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: 'yarn'
+            - run: yarn
+            - run: yarn
+              working-directory: templates/routing-typescript
+            - run: yarn prettier:check
+              working-directory: templates/routing-typescript
+            - run: yarn lint
+              working-directory: templates/routing-typescript
+
     publish_cli_templates:
         runs-on: ubuntu-latest
         if: ${{ github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev') }}
-        needs: prettier_lint
+        needs: prettier_lint_blank
         strategy:
             matrix:
                 node-version: [20.x]
