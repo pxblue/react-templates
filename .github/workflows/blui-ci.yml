@@ -105,7 +105,7 @@ jobs:
     publish_cli_templates:
         runs-on: ubuntu-latest
         if: ${{ github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev') }}
-        needs: prettier_lint_blank
+        needs: [prettier_lint_blank, prettier_lint_routing, unit_test_blank, unit_test_routing]
         strategy:
             matrix:
                 node-version: [20.x]
