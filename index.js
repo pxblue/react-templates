@@ -14,7 +14,7 @@ const QUESTIONS = [
     {
         name: 'project-choice',
         type: 'list',
-        message: 'What react vite project template would you like to create?',
+        message: 'What Brightlayer-UI React Vite project template would you like to create?',
         choices: CHOICES,
     },
     {
