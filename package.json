@@ -36,7 +36,8 @@
         "prettier": "prettier \"**/**.{ts,tsx,js,jsx,json,css,scss,html}\" --write",
         "prettier:check": "prettier \"**/**.{ts,tsx,js,jsx,json,css,scss,html}\"",
         "precommit": "yarn prettier && yarn lint && yarn generate:licenses",
-        "publish:package": "set npm_config_yes=true && npx -p @brightlayer-ui/publish blui-publish"
+        "publish:package": "set npm_config_yes=true && npx -p @brightlayer-ui/publish blui-publish",
+        "tag:package": "set npm_config_yes=true && npx -p @brightlayer-ui/tag blui-tag"
     },
     "prettier": "@brightlayer-ui/prettier-config",
     "bugs": {
