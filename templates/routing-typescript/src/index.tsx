@@ -15,6 +15,18 @@ import '@brightlayer-ui/react-themes/open-sans';
 import { App } from './App';
 import './index.css';
 
+// TODO: Remove this after the issues with @types/react goes away
+// https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/68444
+/* eslint-disable */
+declare global {
+    namespace React {
+        interface DOMAttributes<T> {
+            placeholder?: string | undefined;
+        }
+    }
+}
+/* eslint-enable */
+
 const container = document.getElementById('root');
 if (!container) throw new Error('Root Element was not found in the DOM');
 

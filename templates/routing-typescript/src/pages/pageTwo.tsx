@@ -37,9 +37,6 @@ export const PageTwo = (): JSX.Element => {
                     icon={<Event fontSize={'inherit'} />}
                     title={'Coming Soon'}
                     description={'Replace this page with your own content'}
-                    placeholder={undefined}
-                    onPointerEnterCapture={undefined}
-                    onPointerLeaveCapture={undefined}
                 />
             </Box>
         </Box>

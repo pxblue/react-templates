@@ -18,9 +18,6 @@ export const App = (): JSX.Element => {
             <DrawerLayout
                 drawer={<NavigationDrawer />}
                 sx={{ height: '100%' }}
-                placeholder={undefined}
-                onPointerEnterCapture={undefined}
-                onPointerLeaveCapture={undefined}
             >
                 <Routes>{MainRouter}</Routes>
             </DrawerLayout>
