@@ -27,7 +27,7 @@
     },
     "license": "BSD-3-Clause",
     "engines": {
-        "node": "^18.0.0 || >=20.0.0"
+        "node": ">=20"
     },
     "scripts": {
         "generate:licenses": "npm-license-crawler -onlyDirectDependencies -json LICENSES.json",
@@ -52,11 +52,11 @@
         "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-react": "^7.35.0",
         "npm-license-crawler": "^0.2.1",
-        "prettier": "^3.2.5"
+        "prettier": "^3.3.3"
     },
     "dependencies": {
         "inquirer": "^10.2.0",
-        "typescript": "^4.9.5"
+        "typescript": "^5.5.3"
     },
     "files": [
         "LICENSE",
@@ -64,7 +64,6 @@
         "CHANGELOG.md",
         "templates",
         "images",
-        "index",
-        "package.json"
+        "index"
     ]
 }
