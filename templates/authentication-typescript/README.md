@@ -1,3 +1,6 @@
+# Brightlayer UI Authentication Template
+## React + TypeScript + Vite + Jest + Testing-library
+
 This project is a sample that demonstrates how to use [@brightlayer-ui/react-auth-workflow](https://www.npmjs.com/package/@brightlayer-ui/react-auth-workflow). It includes a sample Home screen with buttons to log out and change password. If the user is not authenticated, he/she will be presented with the authentication workflow with screens for Log In, Forgot Password, Support, and Registration.
 
 This project now includes an Okta login screen for authentication. To use the Okta login screen, you need to configure your Okta application and update the environment variables in your project.
