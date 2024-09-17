@@ -13,7 +13,6 @@
         "prettier:check": "prettier \"src/**/**.{ts,tsx,js,jsx,json,css,scss,html}\" --check"
     },
     "eslintConfig": {
-        "extends": "react-app"
     },
     "dependencies": {
         "@brightlayer-ui/colors": "^3.0.1",
