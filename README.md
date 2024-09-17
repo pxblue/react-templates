@@ -8,15 +8,15 @@ These are project templates that are used for starting a new Brightlayer UI proj
 
 ### Blank
 
-The [Blank template](./templates/blank-typescript/README.md) provides a bare-bones application with Brightlayer UI components and themes automatically configured and ready to use.
+The [Blank template](https://github.com/etn-ccis/blui-react-cli-templates/blob/master/templates/blank-typescript/README.md) provides a bare-bones application with Brightlayer UI components and themes automatically configured and ready to use.
 
 ### Routing
 
-The [Routing template](./templates/routing-typescript/README.md) provides all of the essential Brightlayer UI configuration as well as additional configuration for using using [React Router](https://reactrouter.com/). It also adds a navigation Drawer to switch between several sample screens.
+The [Routing template](https://github.com/etn-ccis/blui-react-cli-templates/blob/master/templates/routing-typescript/README.md) provides all of the essential Brightlayer UI configuration as well as additional configuration for using using [React Router](https://reactrouter.com/). It also adds a navigation Drawer to switch between several sample screens.
 
 ### Authentication
 
-The [Authentication template](./templates/authentication-typescript/README.md) includes everything from the Routing template and also installs and configures the Brightlayer UI [react-auth-workflow](https://www.npmjs.com/package/@brightlayer-ui/react-auth-workflow) package to automatically wrap the main application with functions and screens for Okta Login, Registration, Change Password, etc.
+The [Authentication template](https://github.com/etn-ccis/blui-react-cli-templates/blob/master/templates/authentication-typescript/README.md) includes everything from the Routing template and also installs and configures the Brightlayer UI [react-auth-workflow](https://www.npmjs.com/package/@brightlayer-ui/react-auth-workflow) package to automatically wrap the main application with functions and screens for Okta Login, Registration, Change Password, etc.
 
 |                | placeholder landing page | navigation drawer & routing | login & registration screens |
 | -------------- | ------------------------ | --------------------------- | ---------------------------- |
@@ -40,10 +40,10 @@ The [Authentication template](./templates/authentication-typescript/README.md) i
 
 ## Usage
 
-You can use these templates with the Brightlayer-UI NPM starter package:
+You can use these templates with the `@brightlayer-ui/create-blui-react-app` package:
 
 ```sh
-npx -p @brightlayer-ui/create-blui-react-app
+npx @brightlayer-ui/create-blui-react-app
 ```
 
 ## Testing Locally

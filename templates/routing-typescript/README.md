@@ -3,7 +3,7 @@
 
 This template installs the basic Brightlayer UI libraries for themes and components and configures the application to use them. It includes the installation and initial setup of routing using [React Router](https://reactrouter.com/). It includes several placeholder routes/screens and a [Drawer](https://brightlayer-ui-components.github.io/react/?path=/info/components-drawer--get-read-me-story) navigator from the Brightlayer UI [React Component Library](https://www.npmjs.com/package/@brightlayer-ui/react-components).
 
-## This project was setup with Brightlayer-ui Packages
+## This project was setup with Brightlayer UI Packages
 
 -   [React Components](https://www.npmjs.com/package/@brightlayer-ui/react-components)
 -   [Theme](https://www.npmjs.com/package/@brightlayer-ui/react-themes)

@@ -15,7 +15,7 @@ This project now includes an Okta login screen for authentication. To use the Ok
     ```
 **Note: The Okta login screen will be automatically presented to the user if they are not authenticated. The user can log in using their Okta credentials. Once authenticated, they will be redirected to the Home screen.**
 
-## This project was setup with Brightlayer-ui Packages
+## This project was setup with Brightlayer UI Packages
 
 -   [React-auth-workflow](https://www.npmjs.com/package/@brightlayer-ui/react-auth-workflow)
 -   [React Components](https://www.npmjs.com/package/@brightlayer-ui/react-components)

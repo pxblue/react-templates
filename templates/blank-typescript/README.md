@@ -3,7 +3,7 @@
 
 This template installs the basic Brightlayer UI libraries for themes and components and configures the application to use them. It includes a simple placeholder screen that you can replace with your own application content.
 
-## This project was setup with Brightlayer-ui Packages
+## This project was setup with Brightlayer UI Packages
 
 -   [React Components](https://www.npmjs.com/package/@brightlayer-ui/react-components)
 -   [Theme](https://www.npmjs.com/package/@brightlayer-ui/react-themes)
