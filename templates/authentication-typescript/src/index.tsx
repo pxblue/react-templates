@@ -1,6 +1,4 @@
-import 'react-app-polyfill/ie11';
 import { ThemeProvider, createTheme, StyledEngineProvider } from '@mui/material/styles';
-import 'react-app-polyfill/stable';
 import React from 'react';
 import { App } from './App';
 import CssBaseline from '@mui/material/CssBaseline';
