@@ -76,6 +76,8 @@ jobs:
               uses: actions/setup-node@v4
               with:
                   node-version: ${{ matrix.node-version }}
+                  cache: 'yarn'
+            - run: yarn
             - run: yarn
               working-directory: templates/authentication-typescript
             - run: yarn prettier:check
