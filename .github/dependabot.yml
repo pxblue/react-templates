@@ -11,7 +11,7 @@ updates:
           - 'external-dependency'
 
     - package-ecosystem: 'npm'
-      directory: '/authentication-typescript'
+      directory: '/templates/authentication-typescript'
       schedule:
           interval: 'monthly'
           day: 'monday'
@@ -21,7 +21,7 @@ updates:
           - 'external-dependency'
 
     - package-ecosystem: 'npm'
-      directory: '/blank-typescript'
+      directory: '/templates/blank-typescript'
       schedule:
           interval: 'monthly'
           day: 'monday'
@@ -31,7 +31,7 @@ updates:
           - 'external-dependency'
 
     - package-ecosystem: 'npm'
-      directory: '/routing-typescript'
+      directory: '/templates/routing-typescript'
       schedule:
           interval: 'monthly'
           day: 'monday'

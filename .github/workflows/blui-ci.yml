@@ -16,7 +16,7 @@ permissions:
     contents: read
 
 jobs:
-    prettier_lint:
+    prettier_lint_blank:
         runs-on: ubuntu-latest
 
         strategy:
@@ -32,13 +32,126 @@ jobs:
                   node-version: ${{ matrix.node-version }}
                   cache: 'yarn'
             - run: yarn
+            - run: yarn
+              working-directory: templates/blank-typescript
             - run: yarn prettier:check
+              working-directory: templates/blank-typescript
             - run: yarn lint
+              working-directory: templates/blank-typescript
 
-    publish_blank_template:
+    prettier_lint_routing:
+        runs-on: ubuntu-latest
+        
+        strategy:
+            matrix:
+                node-version: [20.x]
+        
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: 'yarn'
+            - run: yarn
+            - run: yarn
+              working-directory: templates/routing-typescript
+            - run: yarn prettier:check
+              working-directory: templates/routing-typescript
+            - run: yarn lint
+              working-directory: templates/routing-typescript
+
+    prettier_lint_auth:
+        runs-on: ubuntu-latest
+                
+        strategy:
+            matrix:
+                node-version: [20.x]
+                
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: 'yarn'
+            - run: yarn
+            - run: yarn
+              working-directory: templates/authentication-typescript
+            - run: yarn prettier:check
+              working-directory: templates/authentication-typescript
+            - run: yarn lint
+              working-directory: templates/authentication-typescript
+
+    unit_test_blank:
+        runs-on: ubuntu-latest
+        needs: prettier_lint_blank
+
+        strategy:
+            matrix:
+                node-version: [20.x]
+
+        steps:
+            - uses: actions/checkout@v4
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: 'yarn'
+            - run: yarn
+            - run: yarn
+              working-directory: templates/blank-typescript
+            - run: yarn test
+              working-directory: templates/blank-typescript
+
+    unit_test_routing:
+        runs-on: ubuntu-latest
+        needs: prettier_lint_routing
+        
+        strategy:
+            matrix:
+                node-version: [20.x]
+        
+        steps:
+            - uses: actions/checkout@v4
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: 'yarn'
+            - run: yarn
+            - run: yarn
+              working-directory: templates/blank-typescript
+            - run: yarn test
+              working-directory: templates/blank-typescript
+
+    unit_test_auth:
+        runs-on: ubuntu-latest
+        needs: prettier_lint_auth
+                
+        strategy:
+            matrix:
+                node-version: [20.x]
+                
+        steps:
+            - uses: actions/checkout@v4
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: 'yarn'
+            - run: yarn
+            - run: yarn
+              working-directory: templates/authentication-typescript
+            - run: yarn test
+              working-directory: templates/authentication-typescript
+
+    publish_cli_templates:
         runs-on: ubuntu-latest
         if: ${{ github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev') }}
-        needs: prettier_lint
+        needs: [prettier_lint_blank, prettier_lint_routing, prettier_lint_auth, unit_test_blank, unit_test_routing, unit_test_auth]
         strategy:
             matrix:
                 node-version: [20.x]
@@ -53,50 +166,5 @@ jobs:
                   node-version: ${{ matrix.node-version }}
                   registry-url: 'https://registry.npmjs.org'
             - run: yarn --immutable
-              working-directory: blank-typescript
             - run: npm run publish:package -- -b ${{env.BRANCH}}
-              working-directory: blank-typescript
-
-    publish_routing_template:
-        runs-on: ubuntu-latest
-        if: ${{ github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev') }}
-        needs: prettier_lint
-        strategy:
-            matrix:
-                node-version: [20.x]
-        env:
-            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-            BRANCH: ${{ github.ref == 'refs/heads/master' && 'master' || 'dev' }}
-        steps:
-            - name: Checkout
-              uses: actions/checkout@v2
-            - uses: actions/setup-node@v3
-              with:
-                  node-version: ${{ matrix.node-version }}
-                  registry-url: 'https://registry.npmjs.org'
-            - run: yarn --immutable
-              working-directory: routing-typescript
-            - run: npm run publish:package -- -b ${{env.BRANCH}}
-              working-directory: routing-typescript
-
-    publish_auth_template:
-        runs-on: ubuntu-latest
-        if: ${{ github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev') }}
-        needs: prettier_lint
-        strategy:
-            matrix:
-                node-version: [20.x]
-        env:
-            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-            BRANCH: ${{ github.ref == 'refs/heads/master' && 'master' || 'dev' }}
-        steps:
-            - name: Checkout
-              uses: actions/checkout@v2
-            - uses: actions/setup-node@v3
-              with:
-                  node-version: ${{ matrix.node-version }}
-                  registry-url: 'https://registry.npmjs.org'
-            - run: yarn --immutable
-              working-directory: authentication-typescript
-            - run: npm run publish:package -- -b ${{env.BRANCH}}
-              working-directory: authentication-typescript
+    
