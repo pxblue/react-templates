@@ -54,7 +54,7 @@
         "prettier": "^3.3.3"
     },
     "dependencies": {
-        "inquirer": "^10.2.0",
+        "inquirer": "^11.0.2",
         "typescript": "^5.5.3"
     },
     "files": [
