@@ -28,22 +28,22 @@ The [Authentication template](https://github.com/etn-ccis/blui-react-cli-templat
 
 ##### Routing Template With Collapsed Drawer
 
-![Routing Template With Collapsed Drawer](./images/routing.png)
+![Routing Template With Collapsed Drawer](https://github.com/etn-ccis/blui-react-cli-templates/blob/master/images/routing.png)
 
 ##### Routing Template With Expanded Drawer
 
-![Routing Template With Expanded Drawer](./images/routing-expanded.png)
+![Routing Template With Expanded Drawer](https://github.com/etn-ccis/blui-react-cli-templates/blob/master/images/routing-expanded.png)
 
 ##### Login Screen from Auth Template
 
-![Authentication Template Login](./images/authentication.png)
+![Authentication Template Login](https://github.com/etn-ccis/blui-react-cli-templates/blob/master/images/authentication.png)
 
 ## Usage
 
 You can use these templates with the `@brightlayer-ui/create-blui-react-app` package:
 
 ```sh
-npx @brightlayer-ui/create-blui-react-app
+npx create-blui-react-app
 ```
 
 ## Testing Locally
