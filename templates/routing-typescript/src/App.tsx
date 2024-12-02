@@ -12,8 +12,8 @@ export const App = (): JSX.Element => {
     const { setMode } = useColorScheme();
 
     useEffect(() => {
-        setMode('light')
-    },[])
+        setMode('light');
+    }, []);
 
     return (
         <DrawerContext.Provider

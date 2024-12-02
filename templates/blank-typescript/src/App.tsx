@@ -31,8 +31,8 @@ export const App = (): JSX.Element => {
     const { setMode } = useColorScheme();
 
     useEffect(() => {
-        setMode('light')
-    },[])
+        setMode('light');
+    }, []);
 
     return (
         <Box sx={{ backgroundColor: theme.vars.palette.background.paper, minHeight: '100vh', position: 'relative' }}>

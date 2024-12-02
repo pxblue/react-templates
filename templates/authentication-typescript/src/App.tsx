@@ -42,8 +42,8 @@ export const App = (): JSX.Element => {
     const { setMode } = useColorScheme();
 
     useEffect(() => {
-        setMode('light')
-    },[])
+        setMode('light');
+    }, []);
 
     // handle initialization of auth data on first load
     useEffect(() => {
