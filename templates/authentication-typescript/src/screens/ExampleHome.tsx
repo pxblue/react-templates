@@ -16,8 +16,8 @@ import Box from '@mui/material/Box';
 import Event from '@mui/icons-material/Event';
 import Dashboard from '@mui/icons-material/Dashboard';
 import Notifications from '@mui/icons-material/Notifications';
-import Menu from '@mui/icons-material/Menu';
-import AccountBox from '@mui/icons-material/AccountBox';
+import {Menu} from '@mui/icons-material';
+import {AccountBox} from '@mui/icons-material';
 import ExitToApp from '@mui/icons-material/ExitToApp';
 import Avatar from '@mui/material/Avatar';
 import AppBar from '@mui/material/AppBar';
@@ -50,7 +50,7 @@ export const ExampleHome: React.FC<React.PropsWithChildren> = () => {
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        [theme.breakpoints.down('sm')]: {
+                         [theme.breakpoints.down('sm')]: {
             height: `calc(100vh - ${theme.spacing(7)})`,
         },
     };

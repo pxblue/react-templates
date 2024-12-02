@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders welcome text 1`] = `
+<div>
+  Welcome!
+</div>
+`;

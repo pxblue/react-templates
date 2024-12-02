@@ -1,19 +1,19 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
-import { ThemeProvider, createTheme, StyledEngineProvider } from '@mui/material/styles';
-import * as BLUIThemes from '@brightlayer-ui/react-themes';
+import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 import { HomePage } from '../pages/home';
 import { DrawerContext } from '../contexts/drawerContextProvider';
+import { blueThemes } from '@brightlayer-ui/react-themes';
+import { test, vi } from "vitest";
 
 test('renders welcome text', () => {
     render(
         <StyledEngineProvider injectFirst>
-            <ThemeProvider theme={createTheme(BLUIThemes.blue)}>
+            <ThemeProvider theme={blueThemes}>
                 <DrawerContext.Provider
                     value={{
                         drawerOpen: true,
-                        setDrawerOpen: jest.fn(),
+                        setDrawerOpen: vi.fn(),
                     }}
                 >
                     <HomePage />
@@ -22,5 +22,5 @@ test('renders welcome text', () => {
         </StyledEngineProvider>
     );
     const bluiText = screen.getByText(/Welcome to Brightlayer/i);
-    expect(bluiText).toBeInTheDocument();
+    expect(bluiText).toMatchSnapshot();
 });

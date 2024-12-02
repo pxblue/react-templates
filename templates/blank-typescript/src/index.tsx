@@ -7,12 +7,12 @@
  **/
 import React from 'react';
 import ReactDOMClient from 'react-dom/client';
-import { createTheme, ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
+import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import * as BLUIThemes from '@brightlayer-ui/react-themes';
 import '@brightlayer-ui/react-themes/open-sans';
 import { App } from './App';
 import './index.css';
+import { blueThemes } from '@brightlayer-ui/react-themes';
 
 const container = document.getElementById('root');
 if (!container) throw new Error('Root Element was not found in the DOM');
@@ -21,7 +21,7 @@ const root = ReactDOMClient.createRoot(container);
 
 root.render(
     <StyledEngineProvider injectFirst>
-        <ThemeProvider theme={createTheme(BLUIThemes.blue)}>
+        <ThemeProvider theme={blueThemes}>
             <CssBaseline />
             <App />
         </ThemeProvider>

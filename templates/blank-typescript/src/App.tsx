@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
     AppBar,
     Button,
@@ -13,7 +13,7 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { BluiSVG } from './Logo';
-import { styled } from '@mui/material/styles';
+import { styled, useColorScheme } from '@mui/material/styles';
 
 const BluiSVGStyled = styled(BluiSVG)({
     '@keyframes spin': {
@@ -28,8 +28,14 @@ export const App = (): JSX.Element => {
     const theme = useTheme();
     const sm = useMediaQuery(theme.breakpoints.down('sm'));
 
+    const { setMode } = useColorScheme();
+
+    useEffect(() => {
+        setMode('light')
+    },[])
+
     return (
-        <Box sx={{ backgroundColor: theme.palette.background.paper, minHeight: '100vh', position: 'relative' }}>
+        <Box sx={{ backgroundColor: theme.vars.palette.background.paper, minHeight: '100vh', position: 'relative' }}>
             <AppBar position={'fixed'}>
                 <Toolbar sx={{ px: 2 }}>
                     <IconButton color={'inherit'} edge={'start'} style={{ marginRight: theme.spacing(3) }} size="large">
@@ -51,13 +57,13 @@ export const App = (): JSX.Element => {
             >
                 <Box style={{ maxWidth: 600, margin: '0 auto' }}>
                     <Box style={{ textAlign: 'center' }}>
-                        <BluiSVGStyled size={sm ? 100 : 160} color={theme.palette.primary.main} />
+                        <BluiSVGStyled size={sm ? 100 : 160} color={theme.vars.palette.primary.main} />
                         <Typography variant={sm ? 'h4' : 'h2'} paragraph>
                             Welcome to Brightlayer{' '}
                             <Box
                                 component="span"
                                 sx={{
-                                    color: theme.palette.primary.main,
+                                    color: theme.vars.palette.primary.main,
                                 }}
                             >
                                 UI

@@ -34,7 +34,7 @@ export const HomePage = (): JSX.Element => {
     return (
         <Box
             sx={{
-                backgroundColor: theme.palette.background.paper,
+                backgroundColor: theme.vars.palette.background.paper,
                 minHeight: '100vh',
                 position: 'relative',
             }}
@@ -73,13 +73,13 @@ export const HomePage = (): JSX.Element => {
             >
                 <Box sx={{ maxWidth: 600, m: '0 auto' }}>
                     <Box sx={{ textAlign: 'center' }}>
-                        <BluiSVGStyled size={sm ? 100 : 160} color={theme.palette.primary.main} />
+                        <BluiSVGStyled size={sm ? 100 : 160} color={theme.vars.palette.primary.main} />
                         <Typography variant={sm ? 'h4' : 'h2'} paragraph>
                             Welcome to Brightlayer{' '}
                             <Box
                                 component="span"
                                 sx={{
-                                    color: theme.palette.primary.main,
+                                    color: theme.vars.palette.primary.main,
                                 }}
                             >
                                 UI
