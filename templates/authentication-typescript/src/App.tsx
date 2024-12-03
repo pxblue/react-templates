@@ -53,6 +53,8 @@ export const App = (): JSX.Element => {
                 setLoginData({ email: userData.rememberMeData.user, rememberMe: userData.rememberMeData.rememberMe });
                 setIsAuthenticated(Boolean(userData.userId));
             } catch (e) {
+                // eslint-disable-next-line
+                console.log('Error initializing auth data', e);
                 // handle any error state, rejected promises, etc..
             } finally {
                 setIsLoading(false);

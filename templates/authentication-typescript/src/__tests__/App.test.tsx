@@ -1,8 +1,9 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { test } from 'vitest';
+import { test, expect } from 'vitest';
+import '@testing-library/jest-dom';
 
 test('renders welcome text', () => {
-    render(<div>Welcome!</div>);
-    expect(screen.getByText(/Welcome!/i)).toMatchSnapshot();
+    render(<span>Welcome!</span>);
+    expect(screen.getByText(/Welcome!/i)).toBeInTheDocument();
 });

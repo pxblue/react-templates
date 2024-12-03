@@ -8,7 +8,7 @@ import { createRoot } from 'react-dom/client';
 import { blueThemes } from '@brightlayer-ui/react-themes';
 
 const container = document.getElementById('root');
-const root = createRoot(container || document.createDocumentFragment());
+const root = createRoot(container ?? document.createDocumentFragment());
 
 root.render(
     // Enable Strict Mode for more error checking
