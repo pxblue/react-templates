@@ -2,11 +2,16 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import viteTsconfigPaths from 'vite-tsconfig-paths';
-import { config } from 'dotenv';
+// import { config } from 'dotenv';
 import dts from 'vite-plugin-dts';
 import * as path from 'path';
 
-config();
+// // Load okta environment variables from .env.test file when running tests that require okta auth
+// if (process.env.NODE_ENV === 'test') {
+//     config({ path: '.env.test' });
+// } else {
+//     config();
+// }
 
 export default defineConfig({
     base: '/',
@@ -22,6 +27,13 @@ export default defineConfig({
         'process.env': process.env,
     },
     server: {
+        port: 4200,
+        host: 'localhost',
+        open: true,
+    },
+    preview: {
+        port: 4300,
+        host: 'localhost',
         open: true,
     },
     test: {
@@ -37,4 +49,15 @@ export default defineConfig({
         setupFiles: './src/setupTests.ts',
     },
     root: __dirname,
+    build: {
+        emptyOutDir: true,
+        reportCompressedSize: true,
+        commonjsOptions: {
+            transformMixedEsModules: true,
+        },
+        rollupOptions: {
+            // External packages that should not be bundled into your library.
+            external: ['react', 'react-dom', 'react/jsx-runtime'],
+        },
+    },
 });

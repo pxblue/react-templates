@@ -15,9 +15,16 @@ export default defineConfig({
           tsconfigPath: path.join(__dirname, 'tsconfig.json'),
       }),
   ],
-    server: {
-        open: true,
-    },
+  server: {
+    port: 4200,
+    host: 'localhost',
+    open: true,
+},
+preview: {
+    port: 4300,
+    host: 'localhost',
+    open: true,
+},
     test: {
         name: 'App',
         watch: false,
@@ -31,4 +38,15 @@ export default defineConfig({
         setupFiles: './src/setupTests.ts',
       },
       root: __dirname,
+      build: {
+        emptyOutDir: true,
+        reportCompressedSize: true,
+        commonjsOptions: {
+            transformMixedEsModules: true,
+        },
+        rollupOptions: {
+            // External packages that should not be bundled into your library.
+            external: ['react', 'react-dom', 'react/jsx-runtime'],
+        },
+    },
 });
