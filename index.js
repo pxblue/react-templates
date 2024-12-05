@@ -36,5 +36,5 @@ inquirer.prompt(QUESTIONS).then((answers) => {
     fs.mkdirSync(`${CURR_DIR}/${projectName}`);
     fs.cpSync(templatePath, projectName, { recursive: true });
     fs.renameSync(`${projectName}/gitignore`, `${projectName}/.gitignore`);
-    fs.renameSync(`${projectName}/eslintrc.js`, `${projectName}/.eslintrc.js`);
+    fs.renameSync(`${projectName}/eslint.config.mjs`, `${projectName}/.eslint.config.mjs`);
 });
