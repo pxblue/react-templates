@@ -13,6 +13,7 @@ import '@brightlayer-ui/react-themes/open-sans';
 import { App } from './App';
 import './index.css';
 import { blueThemes } from '@brightlayer-ui/react-themes';
+import type {} from '@mui/material/themeCssVarsAugmentation';
 
 const container = document.getElementById('root');
 if (!container) throw new Error('Root Element was not found in the DOM');

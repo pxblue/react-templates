@@ -14,6 +14,7 @@ import '@brightlayer-ui/react-themes/open-sans';
 import { App } from './App';
 import './index.css';
 import { blueThemes } from '@brightlayer-ui/react-themes';
+import type {} from '@mui/material/themeCssVarsAugmentation';
 
 // TODO: Remove this after the issues with @types/react goes away
 // https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/68444
