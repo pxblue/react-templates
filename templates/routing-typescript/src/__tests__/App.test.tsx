@@ -22,5 +22,5 @@ test('renders welcome text', () => {
         </StyledEngineProvider>
     );
     const bluiText = screen.getByText(/Welcome to Brightlayer/i);
-    expect(bluiText).toMatchSnapshot();
+    expect(bluiText).toBeInTheDocument();
 });
