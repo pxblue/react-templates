@@ -5,7 +5,7 @@ import { AppRouter } from './navigation/AppRouter';
 import { I18nextProvider } from 'react-i18next';
 import i18nAppInstance from './translations/i18n';
 import { LocalStorage } from './store/local-storage';
-import { Box, CircularProgress, SxProps, Theme } from '@mui/material';
+import { Box, CircularProgress, SxProps, Theme, useColorScheme } from '@mui/material';
 
 const containerStyles: SxProps<Theme> = {
     width: '100%',
@@ -39,6 +39,12 @@ export const App = (): JSX.Element => {
 
     const [isLoading, setIsLoading] = useState(true);
 
+    const { setMode } = useColorScheme();
+
+    useEffect(() => {
+        setMode('light');
+    }, []);
+
     // handle initialization of auth data on first load
     useEffect(() => {
         const initialize = async (): Promise<void> => {
@@ -47,6 +53,8 @@ export const App = (): JSX.Element => {
                 setLoginData({ email: userData.rememberMeData.user, rememberMe: userData.rememberMeData.rememberMe });
                 setIsAuthenticated(Boolean(userData.userId));
             } catch (e) {
+                // eslint-disable-next-line
+                console.log('Error initializing auth data', e);
                 // handle any error state, rejected promises, etc..
             } finally {
                 setIsLoading(false);

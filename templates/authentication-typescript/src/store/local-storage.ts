@@ -7,12 +7,12 @@ type AuthData = {
 };
 
 async function readAuthData(): Promise<AuthData> {
-    const jsonUserData = window.localStorage.getItem(LOCAL_USER_DATA) || '{}';
+    const jsonUserData = window.localStorage.getItem(LOCAL_USER_DATA) ?? '{}';
     const userData = (await JSON.parse(jsonUserData)) as {
         user?: string;
         userId?: string;
     };
-    const jsonRememberMeData = window.localStorage.getItem(REMEMBER_ME_DATA) || '{}';
+    const jsonRememberMeData = window.localStorage.getItem(REMEMBER_ME_DATA) ?? '{}';
     const rememberMeData = (await JSON.parse(jsonRememberMeData)) as {
         user: string;
         rememberMe: boolean;

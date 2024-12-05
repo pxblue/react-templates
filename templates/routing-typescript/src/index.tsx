@@ -8,12 +8,13 @@
 import React from 'react';
 import ReactDOMClient from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import { createTheme, ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
+import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import * as BLUIThemes from '@brightlayer-ui/react-themes';
 import '@brightlayer-ui/react-themes/open-sans';
 import { App } from './App';
 import './index.css';
+import { blueThemes } from '@brightlayer-ui/react-themes';
+import type {} from '@mui/material/themeCssVarsAugmentation';
 
 // TODO: Remove this after the issues with @types/react goes away
 // https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/68444
@@ -34,7 +35,7 @@ const root = ReactDOMClient.createRoot(container);
 
 root.render(
     <StyledEngineProvider injectFirst>
-        <ThemeProvider theme={createTheme(BLUIThemes.blue)}>
+        <ThemeProvider theme={blueThemes}>
             <BrowserRouter>
                 <CssBaseline />
                 <App />

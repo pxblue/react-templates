@@ -1,14 +1,15 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { ThemeProvider, createTheme, StyledEngineProvider } from '@mui/material/styles';
+import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 import '@testing-library/jest-dom';
-import * as BLUIThemes from '@brightlayer-ui/react-themes';
 import { App } from '../App';
+import { blueThemes } from '@brightlayer-ui/react-themes';
+import { test } from 'vitest';
 
 test('renders welcome text', () => {
     render(
         <StyledEngineProvider injectFirst>
-            <ThemeProvider theme={createTheme(BLUIThemes.blue)}>
+            <ThemeProvider theme={blueThemes}>
                 <App />
             </ThemeProvider>
         </StyledEngineProvider>
