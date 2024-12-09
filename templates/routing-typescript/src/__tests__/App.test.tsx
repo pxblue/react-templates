@@ -4,7 +4,7 @@ import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 import { HomePage } from '../pages/home';
 import { DrawerContext } from '../contexts/drawerContextProvider';
 import { blueThemes } from '@brightlayer-ui/react-themes';
-import { test, vi } from 'vitest';
+import { vi } from 'vitest';
 
 test('renders welcome text', () => {
     render(

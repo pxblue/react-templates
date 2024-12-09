@@ -38,6 +38,8 @@ jobs:
               working-directory: templates/blank-typescript
             - run: yarn lint
               working-directory: templates/blank-typescript
+            - run: yarn lint
+              working-directory: templates/blank-typescript
 
     prettier_lint_routing:
         runs-on: ubuntu-latest

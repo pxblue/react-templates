@@ -1,5 +1,5 @@
 # Brightlayer UI Blank Template
-## React + TypeScript + Vite + Jest + Testing-library
+## React + TypeScript + Vite + Vitest + Testing-library
 
 This template installs the basic Brightlayer UI libraries for themes and components and configures the application to use them. It includes a simple placeholder screen that you can replace with your own application content.
 
@@ -19,41 +19,32 @@ This template installs the basic Brightlayer UI libraries for themes and compone
 -   [vite-tsconfig-paths](https://www.npmjs.com/package/vite-tsconfig-paths) give vite the ability to resolve imports using TypeScript's path mapping.
 
 ## Test setup
--   [jest](https://jestjs.io/)
+-   [vitest](https://vitest.dev/guide/)
 -   [testing-library/react](https://github.com/testing-library/react-testing-library#readme)
 -   [testing-library/dom](https://github.com/testing-library/dom-testing-library#readme)
 -   [testing-library/jest-dom](https://github.com/testing-library/jest-dom#readme)
 -   [testing-library/user-event](https://github.com/testing-library/user-event#readme)
 
-
-## Project Structure
-
-Projects created using this template will start out with the following file structure:
-
-```
-└── /src
-    |── index.tsx  // the root file that renders the application (Theme Provider & CSS Baseline styles)
-    └── App.tsx    // a sample landing page
-```
-
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+### `yarn start`
 
 Runs the app in the development mode.
-Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
+Open [http://localhost:4200](http://localhost:4200) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### `yarn preview`
 
-### `npm test`
+Runs the app in the production mode and requires `yarn build`. This allows you to serve and test the production version of your app locally.
+Open [http://localhost:4300](http://localhost:4300) to view it in the browser.
+
+### `yarn test`
 
 Launches test runner in the interactive watch mode.
 See the section about [setup & running tests](https://testing-library.com/docs/react-testing-library/setup/) for more information.
 
-### `npm run build`
+### `yarn build`
 
 Builds the app for production to the `dist` folder.
 It correctly bundles React in production mode and optimizes the build for the best performance. See the [vite getting started](https://vitejs.dev/guide/#getting-started) for additional information. 
@@ -61,11 +52,11 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.
 Your app is ready to be deployed!
 
-### `npm prettier`
+### `yarn prettier`
 
 [Brightlayer UI Prettier Configuration](https://www.npmjs.com/package/@brightlayer-ui/prettier-config) used to enforce consistent code style.
 
-### `npm lint`
+### `yarn lint`
 
 [Brightlayer UI ESLint Configuration](https://www.npmjs.com/package/@brightlayer-ui/eslint-config) for Typescript and TSX projects. ESLint is used for enforcement of code quality across Brightlayer UI applications.
 
