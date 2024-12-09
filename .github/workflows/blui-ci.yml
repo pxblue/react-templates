@@ -80,11 +80,40 @@ jobs:
             - run: yarn test
               working-directory: templates/routing-typescript
 
+      build_templates:
+          runs-on: ubuntu-latest
+          needs: [prettier_templates, lint_templates, unit_test_templates]
+              
+          strategy:
+              matrix:
+                  node-version: [20.x]
+              
+          steps:
+              - uses: actions/checkout@v4
+              - name: Use Node.js ${{ matrix.node-version }}
+                uses: actions/setup-node@v4
+                with:
+                    node-version: ${{ matrix.node-version }}
+                    cache: 'yarn'
+              - run: yarn
+              - run: yarn
+                working-directory: templates/authentication-typescript
+              - run: yarn build
+                working-directory: templates/authentication-typescript
+              - run: yarn
+                working-directory: templates/blank-typescript
+              - run: yarn build
+                working-directory: templates/blank-typescript
+              - run: yarn
+                working-directory: templates/routing-typescript
+              - run: yarn build
+                working-directory: templates/routing-typescript
+
 
     publish_cli_templates:
         runs-on: ubuntu-latest
         if: ${{ github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev') }}
-        needs: [prettier_templates, lint_templates, unit_test_templates]
+        needs: [prettier_templates, lint_templates, unit_test_templates, build_templates]
         strategy:
             matrix:
                 node-version: [20.x]
