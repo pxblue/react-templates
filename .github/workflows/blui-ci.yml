@@ -52,33 +52,33 @@ jobs:
             - run: yarn
             - run: yarn lint
 
-      unit_test_templates:
-          runs-on: ubuntu-latest
+    unit_test_templates:
+        runs-on: ubuntu-latest
       
-          strategy:
-              matrix:
-                  node-version: [20.x]
+        strategy:
+            matrix:
+                node-version: [20.x]
       
-          steps:
-              - uses: actions/checkout@v4
-              - name: Use Node.js ${{ matrix.node-version }}
-                uses: actions/setup-node@v4
-                with:
-                    node-version: ${{ matrix.node-version }}
-                    cache: 'yarn'
-              - run: yarn
-              - run: yarn
-                working-directory: templates/authentication-typescript
-              - run: yarn test
-                working-directory: templates/authentication-typescript
-              - run: yarn
-                working-directory: templates/blank-typescript
-              - run: yarn test
-                working-directory: templates/blank-typescript
-              - run: yarn
-                working-directory: templates/routing-typescript
-              - run: yarn test
-                working-directory: templates/routing-typescript
+        steps:
+            - uses: actions/checkout@v4
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: 'yarn'
+            - run: yarn
+            - run: yarn
+              working-directory: templates/authentication-typescript
+            - run: yarn test
+              working-directory: templates/authentication-typescript
+            - run: yarn
+              working-directory: templates/blank-typescript
+            - run: yarn test
+              working-directory: templates/blank-typescript
+            - run: yarn
+              working-directory: templates/routing-typescript
+            - run: yarn test
+              working-directory: templates/routing-typescript
 
     unit_test_blank:
         runs-on: ubuntu-latest
