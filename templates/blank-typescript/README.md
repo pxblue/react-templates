@@ -42,15 +42,12 @@ Open [http://localhost:4300](http://localhost:4300) to view it in the browser.
 ### `yarn test`
 
 Launches test runner in the interactive watch mode.
-See the section about [setup & running tests](https://testing-library.com/docs/react-testing-library/setup/) for more information.
+See the React Testing Library [setup & running tests](https://testing-library.com/docs/react-testing-library/setup/) and Vitest [setup & guide](https://vitest.dev/guide/) for more information.
 
 ### `yarn build`
 
 Builds the app for production to the `dist` folder.
 It correctly bundles React in production mode and optimizes the build for the best performance. See the [vite getting started](https://vitejs.dev/guide/#getting-started) for additional information. 
-
-The build is minified and the filenames include the hashes.
-Your app is ready to be deployed!
 
 ### `yarn prettier`
 
