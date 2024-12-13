@@ -4,7 +4,6 @@ import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 import '@testing-library/jest-dom';
 import { App } from '../App';
 import { blueThemes } from '@brightlayer-ui/react-themes';
-import { test } from 'vitest';
 
 test('renders welcome text', () => {
     render(

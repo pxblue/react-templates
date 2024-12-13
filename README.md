@@ -40,7 +40,7 @@ The [Authentication template](https://github.com/etn-ccis/blui-react-cli-templat
 
 ## Usage
 
-You can use these templates with the `@brightlayer-ui/create-blui-react-app` package:
+You can use these templates with the `create-blui-react-app` package:
 
 ```sh
 npx create-blui-react-app

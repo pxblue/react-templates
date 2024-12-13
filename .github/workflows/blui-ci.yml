@@ -16,7 +16,7 @@ permissions:
     contents: read
 
 jobs:
-    prettier_lint_blank:
+    prettier_templates:
         runs-on: ubuntu-latest
 
         strategy:
@@ -31,15 +31,10 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
                   cache: 'yarn'
-            - run: yarn
-            - run: yarn
-              working-directory: templates/blank-typescript
+            - run: yarn 
             - run: yarn prettier:check
-              working-directory: templates/blank-typescript
-            - run: yarn lint
-              working-directory: templates/blank-typescript
 
-    prettier_lint_routing:
+    lint_templates:
         runs-on: ubuntu-latest
         
         strategy:
@@ -55,103 +50,69 @@ jobs:
                   node-version: ${{ matrix.node-version }}
                   cache: 'yarn'
             - run: yarn
-            - run: yarn
-              working-directory: templates/routing-typescript
-            - run: yarn prettier:check
-              working-directory: templates/routing-typescript
             - run: yarn lint
+
+    unit_test_templates:
+        runs-on: ubuntu-latest
+      
+        strategy:
+            matrix:
+                node-version: [20.x]
+      
+        steps:
+            - uses: actions/checkout@v4
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v4
+              with:
+                  node-version: ${{ matrix.node-version }}
+                  cache: 'yarn'
+            - run: yarn
+            - run: yarn
+              working-directory: templates/authentication-typescript
+            - run: yarn test
+              working-directory: templates/authentication-typescript
+            - run: yarn
+              working-directory: templates/blank-typescript
+            - run: yarn test
+              working-directory: templates/blank-typescript
+            - run: yarn
+              working-directory: templates/routing-typescript
+            - run: yarn test
               working-directory: templates/routing-typescript
 
-    prettier_lint_auth:
+    build_templates:
         runs-on: ubuntu-latest
-                
+              
         strategy:
             matrix:
                 node-version: [20.x]
-                
-        steps:
-            - name: Checkout
-              uses: actions/checkout@v4
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v4
-              with:
-                  node-version: ${{ matrix.node-version }}
-                  cache: 'yarn'
-            - run: yarn
-            - run: yarn
-              working-directory: templates/authentication-typescript
-            - run: yarn prettier:check
-              working-directory: templates/authentication-typescript
-            - run: yarn lint
-              working-directory: templates/authentication-typescript
-
-    unit_test_blank:
-        runs-on: ubuntu-latest
-        needs: prettier_lint_blank
-
-        strategy:
-            matrix:
-                node-version: [20.x]
-
+              
         steps:
             - uses: actions/checkout@v4
             - name: Use Node.js ${{ matrix.node-version }}
               uses: actions/setup-node@v4
               with:
-                  node-version: ${{ matrix.node-version }}
-                  cache: 'yarn'
-            - run: yarn
-            - run: yarn
-              working-directory: templates/blank-typescript
-            - run: yarn test
-              working-directory: templates/blank-typescript
-
-    unit_test_routing:
-        runs-on: ubuntu-latest
-        needs: prettier_lint_routing
-        
-        strategy:
-            matrix:
-                node-version: [20.x]
-        
-        steps:
-            - uses: actions/checkout@v4
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v4
-              with:
-                  node-version: ${{ matrix.node-version }}
-                  cache: 'yarn'
-            - run: yarn
-            - run: yarn
-              working-directory: templates/blank-typescript
-            - run: yarn test
-              working-directory: templates/blank-typescript
-
-    unit_test_auth:
-        runs-on: ubuntu-latest
-        needs: prettier_lint_auth
-                
-        strategy:
-            matrix:
-                node-version: [20.x]
-                
-        steps:
-            - uses: actions/checkout@v4
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v4
-              with:
-                  node-version: ${{ matrix.node-version }}
-                  cache: 'yarn'
+                node-version: ${{ matrix.node-version }}
+                cache: 'yarn'
             - run: yarn
             - run: yarn
               working-directory: templates/authentication-typescript
-            - run: yarn test
+            - run: yarn build
               working-directory: templates/authentication-typescript
+            - run: yarn
+              working-directory: templates/blank-typescript
+            - run: yarn build
+              working-directory: templates/blank-typescript
+            - run: yarn
+              working-directory: templates/routing-typescript
+            - run: yarn build
+              working-directory: templates/routing-typescript
+
 
     publish_cli_templates:
         runs-on: ubuntu-latest
         if: ${{ github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/dev') }}
-        needs: [prettier_lint_blank, prettier_lint_routing, prettier_lint_auth, unit_test_blank, unit_test_routing, unit_test_auth]
+        needs: [prettier_templates, lint_templates, unit_test_templates, build_templates]
         strategy:
             matrix:
                 node-version: [20.x]
@@ -160,7 +121,7 @@ jobs:
             BRANCH: ${{ github.ref == 'refs/heads/master' && 'master' || 'dev' }}
         steps:
             - name: Checkout
-              uses: actions/checkout@v2
+              uses: actions/checkout@v4
             - uses: actions/setup-node@v3
               with:
                   node-version: ${{ matrix.node-version }}
