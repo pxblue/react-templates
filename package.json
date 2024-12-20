@@ -43,7 +43,7 @@
         "url": "https://github.com/etn-ccis/blui-react-cli-templates/issues"
     },
     "devDependencies": {
-        "@brightlayer-ui/eslint-config": "^4.0.0-alpha.0",
+        "@brightlayer-ui/eslint-config": "^4.0.0",
         "@brightlayer-ui/prettier-config": "^1.0.3",
         "@typescript-eslint/eslint-plugin": "^5.62.0",
         "@typescript-eslint/parser": "^5.62.0",

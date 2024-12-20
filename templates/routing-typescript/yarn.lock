@@ -182,10 +182,10 @@
   dependencies:
     "@brightlayer-ui/types" "^2.0.0"
 
-"@brightlayer-ui/eslint-config@^4.0.0-alpha.0":
-  version "4.0.0-alpha.0"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/eslint-config/-/eslint-config-4.0.0-alpha.0.tgz#341405a28f4176a2ef818debd8417ddb64ebe95f"
-  integrity sha512-WHgNRsN0rhx8nCMNC3ZBEDMVrgTkY2cePjHwOyMTriMQHMKX4b5m5NpC1a5ZWwVcfitX1uthpWa71j0O2rvJQg==
+"@brightlayer-ui/eslint-config@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/eslint-config/-/eslint-config-4.0.0.tgz#81dd1c6960a43c6df772ce4658c488fa7c6be7e8"
+  integrity sha512-J6/yyxejgU6OY3/aeCR8BkUJATP4q9RaZY0GikX4JxoOH/hYD3TYs2jIUQ2fFchhD/4gVVm7dKk47RyCHizTEg==
   dependencies:
     "@eslint/js" "^9.13.0"
     "@typescript-eslint/parser" "^8.10.0"

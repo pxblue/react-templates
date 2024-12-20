@@ -39,7 +39,7 @@
         "vite-tsconfig-paths": "^5.0.1"
     },
     "devDependencies": {
-        "@brightlayer-ui/eslint-config": "^4.0.0-alpha.0",
+        "@brightlayer-ui/eslint-config": "^4.0.0",
         "@brightlayer-ui/prettier-config": "^1.0.3",
         "@emotion/css": "^11.11.2",
         "@testing-library/dom": "^10.4.0",
