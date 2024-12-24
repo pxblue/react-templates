@@ -213,10 +213,10 @@
   resolved "https://registry.yarnpkg.com/@brightlayer-ui/prettier-config/-/prettier-config-1.0.3.tgz#e40a7ae7435c6fd5118acbf249080e0aa81e93af"
   integrity sha512-EYm3+V7Qd+oYEF+8FadsXAZqXryEHHbGnrV1BMp9selhABjceqUqXPVE4Sn3SKWQdBNJ3En2A3EzgrzRbvRTaw==
 
-"@brightlayer-ui/react-auth-workflow@^5.0.0-beta.2":
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-auth-workflow/-/react-auth-workflow-5.0.0.tgz#9fb98b9e1c2054edf2ba88ee7b3bcb434645d0f5"
-  integrity sha512-k2rms+MuP4yzJQAtu0+SkPs1HvNhvnPp1larPrXRUgX7Y+bAisvUAHByiJ2OhQZEnTEZLHeUs0mOXYsYiw7T6A==
+"@brightlayer-ui/react-auth-workflow@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/react-auth-workflow/-/react-auth-workflow-6.0.0.tgz#f5c3145a5649d02e19fe0469fffceb0591a5d453"
+  integrity sha512-LC97Ox9XbVCPvIT3Peio05siSh//g/9Xlq7OW9GUxtp/zjD2V5SwMJ3G2rXNKeDcnEG75ZrHB48gfdIJe2WtkA==
   dependencies:
     "@okta/okta-auth-js" "^7.7.0"
     "@okta/okta-react" "^6.9.0"

@@ -1,4 +1,4 @@
-## v1.0.0 (December 20, 2024)
+## v1.0.0 (December 24, 2024)
 
 ### Added
 
