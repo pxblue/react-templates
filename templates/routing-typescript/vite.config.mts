@@ -8,23 +8,23 @@ import * as path from 'path';
 export default defineConfig({
     base: '/',
     plugins: [
-      react(),
-      viteTsconfigPaths(),
-      dts({
-          entryRoot: 'src',
-          tsconfigPath: path.join(__dirname, 'tsconfig.json'),
-      }),
-  ],
-  server: {
-    port: 4200,
-    host: 'localhost',
-    open: true,
-},
-preview: {
-    port: 4300,
-    host: 'localhost',
-    open: true,
-},
+        react(),
+        viteTsconfigPaths(),
+        dts({
+            entryRoot: 'src',
+            tsconfigPath: path.join(__dirname, 'tsconfig.json'),
+        }),
+    ],
+    server: {
+        port: 4200,
+        host: 'localhost',
+        open: true,
+    },
+    preview: {
+        port: 4300,
+        host: 'localhost',
+        open: true,
+    },
     test: {
         name: 'App',
         watch: false,
@@ -32,13 +32,13 @@ preview: {
         environment: 'jsdom',
         reporters: ['default'],
         coverage: {
-          reportsDirectory: 'coverage',
-          provider: 'v8',
+            reportsDirectory: 'coverage',
+            provider: 'v8',
         },
         setupFiles: './src/setupTests.ts',
-      },
-      root: __dirname,
-      build: {
+    },
+    root: __dirname,
+    build: {
         emptyOutDir: true,
         reportCompressedSize: true,
         commonjsOptions: {
