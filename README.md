@@ -1,20 +1,22 @@
-# React CLI Templates
+[![Build](https://github.com/etn-ccis/blui-react-cli-templates/actions/workflows/blui-ci.yml/badge.svg?branch=master)](https://github.com/etn-ccis/blui-react-cli-templates/actions/workflows/blui-ci.yml)
 
-These are project templates that are used by Create React App when starting a new Brightlayer UI project. They are used behind the scenes by the Brightlayer UI CLI.
+# React + TypeScript + Vite Templates
+
+These are project templates that are used for starting a new Brightlayer UI project. The templates are configured with the basic Brightlayer UI libraries for themes and components and configures the application to use them.
 
 ## Available Templates
 
 ### Blank
 
-The [Blank template](https://www.npmjs.com/package/@brightlayer-ui/cra-template-blank-typescript) provides a bare-bones application with Brightlayer UI components and themes automatically configured and ready to use.
+The [Blank template](https://github.com/etn-ccis/blui-react-cli-templates/blob/master/templates/blank-typescript/README.md) provides a bare-bones application with Brightlayer UI components and themes automatically configured and ready to use.
 
 ### Routing
 
-The [Routing template](https://www.npmjs.com/package/@brightlayer-ui/cra-template-routing-typescript) provides all of the essential Brightlayer UI configuration as well as additional configuration for using using [React Router](https://reactrouter.com/). It also adds a navigation Drawer to switch between several sample screens.
+The [Routing template](https://github.com/etn-ccis/blui-react-cli-templates/blob/master/templates/routing-typescript/README.md) provides all of the essential Brightlayer UI configuration as well as additional configuration for using using [React Router](https://reactrouter.com/). It also adds a navigation Drawer to switch between several sample screens.
 
 ### Authentication
 
-The [Authentication template](https://www.npmjs.com/package/@brightlayer-ui/cra-template-authentication-typescript) includes everything from the Routing template and also installs and configures the Brightlayer UI [react-auth-workflow](https://www.npmjs.com/package/@brightlayer-ui/react-auth-workflow) package to automatically wrap the main application with functions and screens for Login, Registration, Change Password, etc.
+The [Authentication template](https://github.com/etn-ccis/blui-react-cli-templates/blob/master/templates/authentication-typescript/README.md) includes everything from the Routing template and also installs and configures the Brightlayer UI [react-auth-workflow](https://www.npmjs.com/package/@brightlayer-ui/react-auth-workflow) package to automatically wrap the main application with functions and screens for Okta Login, Registration, Change Password, etc.
 
 |                | placeholder landing page | navigation drawer & routing | login & registration screens |
 | -------------- | ------------------------ | --------------------------- | ---------------------------- |
@@ -26,32 +28,22 @@ The [Authentication template](https://www.npmjs.com/package/@brightlayer-ui/cra-
 
 ##### Routing Template With Collapsed Drawer
 
-![Routing Template With Collapsed Drawer](./images/routing.png)
+![Routing Template With Collapsed Drawer](https://github.com/etn-ccis/blui-react-cli-templates/blob/master/images/routing.png)
 
 ##### Routing Template With Expanded Drawer
 
-![Routing Template With Expanded Drawer](./images/routing-expanded.png)
+![Routing Template With Expanded Drawer](https://github.com/etn-ccis/blui-react-cli-templates/blob/master/images/routing-expanded.png)
 
 ##### Login Screen from Auth Template
 
-![Authentication Template Login](./images/authentication.png)
+![Authentication Template Login](https://github.com/etn-ccis/blui-react-cli-templates/blob/master/images/authentication.png)
 
 ## Usage
 
-You can use these templates with the Brightlayer UI CLI (recommended):
+You can use these templates with the `create-blui-react-app` package:
 
 ```sh
-npx -p @brightlayer-ui/cli blui new react --template=blank-typescript
-npx -p @brightlayer-ui/cli blui new react --template=routing-typescript
-npx -p @brightlayer-ui/cli blui new react --template=authentication-typescript
-```
-
-or with the Create React App CLI:
-
-```sh
-npx create-react-app app-name --template @brightlayer-ui/blank-typescript
-npx create-react-app app-name --template @brightlayer-ui/routing-typescript
-npx create-react-app app-name --template @brightlayer-ui/authentication-typescript
+npx create-blui-react-app
 ```
 
 ## Testing Locally
@@ -59,10 +51,9 @@ npx create-react-app app-name --template @brightlayer-ui/authentication-typescri
 If you would like to test these templates locally, you may do so by running the following command:
 
 ```
-npx create-react-app myapp --template file:../path/to/template
+npm link
+npx create-blui-react-app
 ```
-
-For more information refer to the [CRA documentation](https://create-react-app.dev/docs/custom-templates/).
 
 ## Browser Support
 
