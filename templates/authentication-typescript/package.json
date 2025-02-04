@@ -24,7 +24,7 @@
         "@mui/base": "^5.0.0-beta.63",
         "@mui/icons-material": "^6.1.9",
         "@mui/material": "^6.1.4",
-        "@okta/okta-auth-js": "^7.7.0",
+        "@okta/okta-auth-js": "^7.10.1",
         "@okta/okta-react": "^6.9.0",
         "@types/react": "18.2.39",
         "@types/react-dom": "^18.0.0",
